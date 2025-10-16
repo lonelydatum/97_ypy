@@ -57,6 +57,8 @@ function init({ypy, device}, logoAnimateStart=false){
 	return tl
 }
 
+// olg()
+
 
  
 
