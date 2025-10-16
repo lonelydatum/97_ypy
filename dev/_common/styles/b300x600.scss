@@ -1,0 +1,31 @@
+@import './common.scss';
+@import './ypy.scss';
+
+
+#banner{
+ width: 300px;
+ height: 600px;
+}
+ 
+
+
+
+#legalBtn{	
+	@include pos(220, 0);	
+	width: 72px;
+	// opacity: 1;
+}
+
+ 
+
+.logo{		
+	width: 82px;		
+}
+
+#svg_move,
+#svg_idle {
+  @include pos(-11, 533);
+}
+#olg_main {
+  width: 106px;
+}
