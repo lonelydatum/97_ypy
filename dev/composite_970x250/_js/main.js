@@ -36,10 +36,10 @@ function init({ypy, device}, logoAnimateStart=false){
 	tl.to(".t2", {duration:.3, opacity:0}, `+=${read.t2}`)
 	tl.to([  ".frame1"], {duration:.3, opacity:0} )
 	tl.set(".frame2", {opacity:1}, "+=.4")
-	tl.from(".end_device", {duration:.3, opacity:0})
+	// tl.from(".end_device", {duration:.3, opacity:0})
 	tl.from(".end_url", {duration:.3, opacity:0}, "+=.3")
-	tl.from(".end_ypy", {duration:.3, opacity:0}, "+=.3")
-	tl.from(".end_cta", {duration:.3, opacity:0, y:"+=50", opacity:0}, "+=.3")
+	tl.from(".end_ypy", {duration:.3, opacity:0}, "+=.1")
+	tl.from(".end_cta", {duration:.3, opacity:0, y:"+=50", opacity:0}, "+=.1")
 
 	tl.add(olg())
 	return tl

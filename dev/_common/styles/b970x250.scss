@@ -15,17 +15,12 @@
 }
 
 
-.logo{	
-	@include pos(0, 0);
-	width: 132px;	
-	bottom:-3px;
-	left:0;
+ 
+#svg_move, #svg_idle{
+	@include pos(-13, 162);
 }
-
-svg#fire{
-	@include pos-scale(86, -22, 0);
-	width: 27px;	
-	
+#olg_main{		
+	width: 136px;	
 }
 
 

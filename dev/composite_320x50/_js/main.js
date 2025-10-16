@@ -1,4 +1,4 @@
-import {logoGO, read} from '../../_common/js/common.js'
+import {olg, read} from '../../_common/js/common.js'
 
 const ypy = new TimelineMax()
 ypy.from([".ypy_1", ".ypy_2", ".ypy_3"], {duration:.3, y:"-=200", stagger:.13})
@@ -51,7 +51,7 @@ function init({ypy, device}){
 	tl.from(".end_ypy", {duration:.3, opacity:0}, "+=.3")
 	tl.from(".end_cta", {duration:.3, opacity:0, y:"+=50", opacity:0}, "+=.3")
 
-	tl.add(logoGO())
+	tl.add(olg())
 	return tl
 }
 
