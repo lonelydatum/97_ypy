@@ -1,13 +1,18 @@
-@import './common.scss';
-@import './ypy.scss';
+@import "./common.scss";
+@import "./ypy.scss";
 
-#banner{
- width: 300px;
- height: 250px; 
+#banner {
+  width: 300px;
+  height: 250px;
 }
 
+#legalBtn {
+  @include pos(240, 0);
+  width: 60px;
+}
 
-#legalBtn{	
-	@include pos(240, 0);	
-	width: 60px;
+#olg {
+  width: 110px;
+  height: 69px;
+  @include pos(0, 190);
 }

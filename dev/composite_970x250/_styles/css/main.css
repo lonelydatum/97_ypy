@@ -239,7 +239,8 @@ svg {
   height: 50px;
 }
 
-#svg_move, #svg_idle {
+#svg_move,
+#svg_idle {
   -webkit-transform: translate(-13px, 162px);
   -ms-transform: translate(-13px, 162px);
   transform: translate(-13px, 162px);
@@ -252,6 +253,19 @@ svg {
 
 #olg_main {
   width: 136px;
+}
+
+#olg {
+  width: 149px;
+  height: 81px;
+  -webkit-transform: translate(-2px, 173px);
+  -ms-transform: translate(-2px, 173px);
+  transform: translate(-2px, 173px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  position: absolute;
 }
 
 .device {

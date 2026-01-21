@@ -1,25 +1,19 @@
-@import './common.scss';
-@import './ypy.scss';
+@import "./common.scss";
+@import "./ypy.scss";
 
-
-#banner{
- width: 300px;
- height: 600px;
-}
- 
-
-
-
-#legalBtn{	
-	@include pos(220, 0);	
-	width: 72px;
-	// opacity: 1;
+#banner {
+  width: 300px;
+  height: 600px;
 }
 
- 
+#legalBtn {
+  @include pos(220, 0);
+  width: 72px;
+  // opacity: 1;
+}
 
-.logo{		
-	width: 82px;		
+.logo {
+  width: 82px;
 }
 
 #svg_move,
@@ -28,4 +22,11 @@
 }
 #olg_main {
   width: 106px;
+}
+
+#olg {
+  width: 113px;
+  height: 57px;
+  @include pos(0, 545);
+  // opacity: .5 !important;
 }

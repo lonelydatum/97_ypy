@@ -1,50 +1,44 @@
+import { read, olg } from "../../_common/js/common.js";
 
+const ypy = new TimelineMax();
+ypy.from([".ypy_1", ".ypy_2", ".ypy_3"], { duration: 0.3, y: "-=200", stagger: 0.13 });
 
-import {read, olg} from '../../_common/js/common.js'
+function init({ ypy, device }, logoAnimateStart = false) {
+  const tl = new TimelineMax({
+    onComplete: () => {
+      if (document.getElementById("legalBtn")) {
+        TweenLite.set("#legalBtn", { display: "block" });
+      }
+    },
+  });
 
-const ypy = new TimelineMax()
-ypy.from([".ypy_1", ".ypy_2", ".ypy_3"], {duration:.3, y:"-=200", stagger:.13})
+  TweenLite.to(".hero_on", { duration: 2, opacity: 1, yoyo: true, repeat: 0, repeatDelay: 0, ease: "back.out" });
+  TweenLite.to(".phone", { duration: 0.8, opacity: 0.6, yoyo: true, repeat: 11, repeatDelay: 0, ease: "back.out" });
 
+  tl.set(".frame1", { opacity: 1 });
 
- 
+  tl.add(ypy);
+  tl.add("t1", "+=.2");
+  tl.from([".t1"], { duration: 0.3, opacity: 0 }, "t1");
+  tl.from([".device"], { duration: 0.5, opacity: 0 }, "t1");
+  tl.to(".t1", { duration: 0.3, opacity: 0 }, `+=${read.t1}`);
 
+  tl.add("t2");
+  if (device) {
+    tl.add(device);
+  }
 
-function init({ypy, device}, logoAnimateStart=false){	
-	const tl = new TimelineMax({onComplete:()=>{
-		if(document.getElementById("legalBtn")){			
-			TweenLite.set("#legalBtn", {display:"block"})
-		}
-	}})
-	
-	TweenLite.to(".hero_on", {duration:2, opacity:1, yoyo:true, repeat:0, repeatDelay:0, ease:"back.out"})
-	TweenLite.to(".phone", {duration:.8, opacity:.6, yoyo:true, repeat:11, repeatDelay:0, ease:"back.out"})
-	
-	tl.set(".frame1", {opacity:1})	 
- 
-	tl.add(ypy)
-	tl.add("t1", "+=.2")
-	tl.from([".t1"], {duration:.3, opacity:0}, "t1")
-	tl.from([".device"], {duration:.5, opacity:0}, "t1")
-	tl.to(".t1", {duration:.3, opacity:0}, `+=${read.t1}`)
- 
-	tl.add("t2")
-	if(device){
-		tl.add(device)	
-	}
-		
-	tl.from(".t2", {duration:.3, opacity:0}, "t2")
-	tl.to(".t2", {duration:.3, opacity:0}, `+=${read.t2}`)
-	tl.to([  ".frame1"], {duration:.3, opacity:0} )
-	tl.set(".frame2", {opacity:1}, "+=.4")
-	// tl.from(".end_device", {duration:.3, opacity:0})
-	tl.from(".end_url", {duration:.3, opacity:0}, "+=.3")
-	tl.from(".end_ypy", {duration:.3, opacity:0}, "+=.1")
-	tl.from(".end_cta", {duration:.3, opacity:0, y:"+=50", opacity:0}, "+=.1")
-
-	tl.add(olg())
-	return tl
+  tl.from(".t2", { duration: 0.3, opacity: 0 }, "t2");
+  tl.to(".t2", { duration: 0.3, opacity: 0 }, `+=${read.t2}`);
+  tl.to([".frame1"], { duration: 0.3, opacity: 0 });
+  tl.set(".frame2", { opacity: 1 }, "+=.4");
+  // tl.from(".end_device", {duration:.3, opacity:0})
+  tl.from(".end_url", { duration: 0.3, opacity: 0 }, "+=.3");
+  tl.from(".end_ypy", { duration: 0.3, opacity: 0 }, "+=.1");
+  tl.from(".end_cta", { duration: 0.3, opacity: 0, y: "+=50", opacity: 0 }, "+=.1");
+  tl.to("._logo", { duration: 0.3, y: "+=90" });
+  tl.add(olg());
+  return tl;
 }
 
-
-
-init({ypy})
+init({ ypy });
