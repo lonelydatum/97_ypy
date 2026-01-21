@@ -1,53 +1,40 @@
-@import './common.scss';
-@import './ypy.scss';
+@import "./common.scss";
+@import "./ypy.scss";
 
-#banner{
- width: 320px;
- height: 50px; 
+#banner {
+  width: 320px;
+  height: 50px;
 }
 
-
-
- 
-
-.legal{
-	// display: none;
+.legal {
+  // display: none;
 }
 
-#legalBtn{	
-	@include pos(280, 0);	
-	width: 40px;
+#legalBtn {
+  @include pos(280, 0);
+  width: 40px;
 
-	// display: none;
-	// opacity: 1 !important;
+  // display: none;
+  // opacity: 1 !important;
 }
 
-
-#legalContent{
-	font-size: 8px;
-	line-height: 9px;
-	padding:2px;
-	br{
-		display: none;
-	}
+#legalContent {
+  font-size: 8px;
+  line-height: 9px;
+  padding: 2px;
+  br {
+    display: none;
+  }
 }
 
-
-svg#fire{
-	@include pos-scale(34, -13, 0);
-	width: 12px;	
-	
+svg#fire {
+  @include pos-scale(34, -13, 0);
+  width: 12px;
 }
 
-
-
-.logo{	
-	
-	width: 54px;	
-	
+.logo {
+  width: 54px;
 }
-
-
 
 #svg_move,
 #svg_idle {
@@ -55,4 +42,10 @@ svg#fire{
 }
 #olg_main {
   width: 55px;
+}
+
+#olg {
+  width: 72px;
+  height: 47px;
+  @include pos(0, 11);
 }
